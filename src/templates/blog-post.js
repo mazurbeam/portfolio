@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
-
+import Layout from '../components/layout'
 import {Box, Card, Heading} from 'rebass';
 
 
@@ -10,7 +10,8 @@ class ProjectPage extends Component {
     render() { 
         const post = get(this.props, 'data.contentfulBlogPost')
         // const siteTitle = get(this.props, 'data.site.siteMetadata.title')
-        return ( 
+        return (
+          <Layout>
             <Box>
                 <Helmet title={post.title}/>
                 <Card>
@@ -27,6 +28,7 @@ class ProjectPage extends Component {
                     />
                 </Card>
             </Box>
+          </Layout>
          );
     }
 }

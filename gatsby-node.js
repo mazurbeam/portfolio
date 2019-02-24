@@ -22,8 +22,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                 edges {
                   node {
                     id
-                    name
-                    description
                     slug
                   }
                 }
@@ -48,10 +46,10 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         projects.forEach((project, index) => {
             console.log(project)
           createPage({
-            path: `/projects/${index}/`,
+            path: `/projects/${project.node.slug}/`,
             component: projectPage,
             context: {
-              slug: project.node.id
+              slug: project.node.slug
             },
           })
         })

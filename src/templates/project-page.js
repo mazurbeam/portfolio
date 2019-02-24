@@ -26,7 +26,7 @@ export default ProjectPage;
 
 export const pageQuery = graphql`
   query ProjectPageBySlug($slug: String!) {
-    contentfulProject(id: { eq: $slug }) {
+    contentfulProject(slug: { eq: $slug }) {
       name
       description
     }
