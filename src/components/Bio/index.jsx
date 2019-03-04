@@ -28,7 +28,7 @@ const Wrapper = styled.section`
 const Bio = () => (
   <Wrapper>
     <a
-      href="https://github.com/wonism/gatsby-advanced-blog"
+      href="https://github.com/mazurbeam/portfolio"
       target="_blank"
       rel="noreferrer noopener"
     >
@@ -39,10 +39,10 @@ const Bio = () => (
         alt=""
       />
       <span>
-        Gatsby Advanced Blog
+        Mazurbeam
         <br />
         <small>
-          Gatsby Starter for Advanced Blog
+          Full Stack Developer
         </small>
       </span>
     </a>

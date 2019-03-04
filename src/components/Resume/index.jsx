@@ -131,7 +131,7 @@ class Resume extends PureComponent {
             <title>
               MAZURBEAM | RESUME
             </title>
-            <meta name="og:title" content="WONISM | RESUME" />
+            <meta name="og:title" content="MAZURBEAM | RESUME" />
           </Helmet>
           <Clearfix>
             <button type="button" onClick={printPage}>

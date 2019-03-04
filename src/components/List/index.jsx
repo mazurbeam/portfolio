@@ -23,9 +23,9 @@ const List = ({ data, location }) => {
       <PostsWrapper>
         <Helmet>
           <title>
-            WONISM | POST
+            MAZURBEAM | POST
           </title>
-          <meta name="og:title" content="WONISM | POST" />
+          <meta name="og:title" content="MAZURBEAM | POST" />
         </Helmet>
         {map((post) => {
           if (post.node.path !== '/404/') {

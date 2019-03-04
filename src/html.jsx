@@ -26,7 +26,7 @@ export default class HTML extends Component {
           <meta id="viewport" name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1" />
           <meta name="description" content="Walter Mazur, Full Stack Developer, Portfolio Site" />
           <meta name="keywords" content="Walter Mazur, Mazurbeam, Portfolio, Full Stack Developer, Frontend Developer, React.js, Javascript, Python" />
-          <meta name="author" content="wonism" />
+          <meta name="author" content="mazurbeam" />
           <meta property="og:title" content="Mazurbeam" />
           <meta property="og:site_name" content="Mazurbeam.com" />
           <meta property="og:type" content="website" />
