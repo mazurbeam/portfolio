@@ -1,24 +1,35 @@
-import React from 'react';
 import { renderToString } from 'react-dom/server';
+import Helmet from 'react-helmet';
 import { ServerStyleSheet } from 'styled-components';
-import AppProvider from 'store/provider';
-import wrapPageElementWithTransition from 'helpers/wrapPageElement';
 
 export const replaceRenderer = ({
   bodyComponent,
   replaceBodyHTMLString,
-  setHeadComponents,
+  setHeadComponents
 }) => {
-  // React Context in SSR/build
-  const ConnectedBody = () => <AppProvider>{bodyComponent}</AppProvider>;
-  replaceBodyHTMLString(renderToString(<ConnectedBody />));
-
-  // Add styled-components in SSR/build
   const sheet = new ServerStyleSheet();
-  const bodyHTML = renderToString(sheet.collectStyles(<ConnectedBody />));
-  const styleElement = sheet.getStyleElement();
-  setHeadComponents(styleElement);
+  const body = renderToString(sheet.collectStyles(bodyComponent));
+
+  replaceBodyHTMLString(body);
+  setHeadComponents([sheet.getStyleElement()]);
+
+  return;
 };
 
-// Page Transitions
-export const wrapPageElement = wrapPageElementWithTransition;
+export const onRenderBody = ({
+  setHeadComponents,
+  setHtmlAttributes,
+  setBodyAttributes,
+}, pluginOptions) => {
+  const helmet = Helmet.renderStatic();
+  setHtmlAttributes(helmet.htmlAttributes.toComponent());
+  setBodyAttributes(helmet.bodyAttributes.toComponent());
+  setHeadComponents([
+    helmet.title.toComponent(),
+    helmet.link.toComponent(),
+    helmet.meta.toComponent(),
+    helmet.noscript.toComponent(),
+    helmet.script.toComponent(),
+    helmet.style.toComponent(),
+  ]);
+};

@@ -1,12 +1,5 @@
-import React from 'react';
-import AppProvider from 'store/provider';
-import wrapPageElementWithTransition from 'helpers/wrapPageElement';
+// import '@babel/polyfill';
 
-// React Context in Browser
-// eslint-disable-next-line react/prop-types
-export const wrapRootElement = ({ element }) => {
-  return <AppProvider>{element}</AppProvider>;
+export const onClientEntry = () => {
+  console.log('%cStart Gatsby Advanced Blog!', 'display: block; color: #9f63f0; font-size: 40px;');
 };
-
-// Page Transitions
-export const wrapPageElement = wrapPageElementWithTransition;
