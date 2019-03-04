@@ -38,6 +38,10 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
+html {
+	background-color: #0a68a0;
+}
 body {
 	line-height: 1;
 }
