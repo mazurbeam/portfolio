@@ -36,9 +36,9 @@ const CategorizedList = ({ data, location }) => {
       <PostsWrapper>
         <Helmet>
           <title>
-            {`WONISM | ${toUpper(category)}`}
+            {`MAZURBEAM | ${toUpper(category)}`}
           </title>
-          <meta name="og:title" content={`WONISM | ${toUpper(category)}`} />
+          <meta name="og:title" content={`MAZURBEAM | ${toUpper(category)}`} />
         </Helmet>
         {isEmpty(posts) ? (
           <div>

@@ -59,7 +59,7 @@ export function* loadDisqusScript() {
 
       if (!d.getElementById('disqus-sdk')) {
         const s = d.createElement('script');
-        s.src = 'https://jaewonism.disqus.com/embed.js';
+        s.src = 'https://disqus.com/embed.js';
         s.setAttribute('data-timestamp', Date.now());
         d.body.appendChild(s);
       }
