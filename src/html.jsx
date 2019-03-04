@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import bg from '~/constants/theme'
 const stylesStr = require('!raw-loader!./reset.css');
 
 export default class HTML extends Component {
@@ -37,6 +37,7 @@ export default class HTML extends Component {
           {/* <meta name="msapplication-TileImage" content="" /> */}
           {/* <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="" /> */}
           {/* <link rel="apple-touch-icon" type="image/vnd.microsoft.icon" href="" /> */}
+
           <style id="gatsby-inlined-css" dangerouslySetInnerHTML={{ __html: stylesStr }} />
         </head>
         <body {...bodyAttributes}>

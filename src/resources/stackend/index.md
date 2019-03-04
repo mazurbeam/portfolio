@@ -10,13 +10,16 @@ images: [
 
 # Stackend Solutions
 
-## What I did
-- Made several UI and performance improvements.
+## What I do
+- Work on a variety of projects a Lead Full Stack Developer
 
 ## Libraries / Tools
-- React Native
-- Expo
-- Nativebase
+- React
+- React-Native
+- Flask
+- MongoDB
+- Docker
+- Gitlab
 
 
-[Go to Web Site →](https://nadachatbot.com)
+[Go to Web Site →](https://stackendsolutions.com)

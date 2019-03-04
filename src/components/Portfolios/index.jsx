@@ -17,7 +17,7 @@ const Portfolios = ({ data }) => {
   const portfolios = get('allMarkdownRemark.edges')(data);
 
   return (
-    <Wrapper>
+    <Wrapper bg='#0a68a0' color='#161616'>
       <Helmet>
         <title>
           MAZURBEAM | PORTFOLIO
