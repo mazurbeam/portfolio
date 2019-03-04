@@ -4,6 +4,7 @@ title: "My Portfolio"
 date: "2019-03-03"
 path: "/portfolio/my-portfolio/"
 images: [
+    "portfolio/portfolio-home.png"
 ]
 ---
 
@@ -21,4 +22,4 @@ images: [
 
 
 
-[Go to Web Site →](https://github.com/portfolio)
+[Go to Web Site →](https://github.com/mazurbeam/portfolio)

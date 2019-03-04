@@ -6,6 +6,10 @@ import FaCaretDown from 'react-icons/lib/fa/caret-down';
 import FaHome from 'react-icons/lib/fa/home';
 import FaSearch from 'react-icons/lib/fa/search';
 import FaTags from 'react-icons/lib/fa/tags';
+import FaGithub from 'react-icons/lib/fa/github';
+import {Github} from 'styled-icons/fa-brands/Github'
+import {Linkedin} from 'styled-icons/fa-brands/Linkedin'
+
 import { flow, isEmpty, isEqual, filter, map, uniq, get, size, toLower, replace, startsWith } from 'lodash/fp';
 import { PRIMARY_COLOR, SECONDARY_COLOR } from '~/components/Common/constants';
 
@@ -133,6 +137,28 @@ const StyledLink = styled(Link)`
   }
 `;
 
+const StyledExternalLink = styled.a`
+  &.active {
+    color: ${SECONDARY_COLOR};
+    text-decoration: underline;
+  }
+
+  &:hover {
+    color: ${SECONDARY_COLOR};
+    text-decoration: underline;
+  }
+`;
+
+const SocialLinkWrapper = styled.div`
+  position: absolute;
+  margin-top: 10px;
+  margin-right: 20px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  text-align: right;
+`
+
 const SearchBarWrapper = styled.div`
   position: absolute;
   top: 0;
@@ -154,6 +180,15 @@ const SearchBarWrapper = styled.div`
     padding: 0 8px 0 0;
     z-index: 1001;
   }
+`;
+
+const StyledGithub = styled(Github)`
+  height: 35px;
+  margin-right: 20px;
+`;
+
+const StyledLinkedin = styled(Linkedin)`
+  height: 35px;
 `;
 
 const SearchBar = styled.input`
@@ -388,45 +423,15 @@ const Gnb = ({
                 Resume
               </StyledLink>
             </ListMenu>
-            <SearchBarWrapper>
-              <label htmlFor="search">
-                <FaSearch />
-              </label>
-              <SearchBar
-                id="search"
-                type="text"
-                value={searchKeyword}
-                onChange={flow(
-                  get('target.value'),
-                  inputKeyword,
-                )}
-              />
-            </SearchBarWrapper>
-            <SearchedPosts isEmpty={isEmpty(filteredPosts)}>
-              {map(({ path, title, summary, tags }) => (
-                <SearchedPost key={path}>
-                  <Title onClick={() => { navigateToPath(path); }}>
-                    {title}
-                  </Title>
-                  <Summary onClick={() => { navigateToPath(path); }}>
-                    {summary}
-                  </Summary>
-                  {size(tags) ? (
-                    <FaTags />
-                  ) : null}
-                  {flow(
-                    uniq,
-                    map(tag => (
-                      <Tag key={tag} onClick={() => { navigateToPath(`/tags/${tag}/1`); }}>
-                        <small>
-                          {tag}
-                        </small>
-                      </Tag>
-                    ))
-                  )(tags)}
-                </SearchedPost>
-              ))(filteredPosts)}
-            </SearchedPosts>
+            <ListMenu>
+              <StyledExternalLink href='https://github.com/mazurbeam' target='_blank'>
+              <StyledGithub/>
+              </StyledExternalLink>
+              <StyledExternalLink href='https://www.linkedin.com/in/walter-mazur-02803453/' target='_blank'>
+                <StyledLinkedin/>
+              </StyledExternalLink>
+            </ListMenu>
+
           </ul>
         </MobileMenus>
       </MobileMenu>
@@ -457,45 +462,16 @@ const Gnb = ({
             Resume
           </StyledLink>
         </ListMenu>
-        <SearchBarWrapper>
-          <label htmlFor="search">
-            <FaSearch />
-          </label>
-          <SearchBar
-            id="search"
-            type="text"
-            value={searchKeyword}
-            onChange={flow(
-              get('target.value'),
-              inputKeyword,
-            )}
-          />
-        </SearchBarWrapper>
-        <SearchedPosts isEmpty={isEmpty(filteredPosts)}>
-          {map(({ path, title, summary, tags }) => (
-            <SearchedPost key={path}>
-              <Title onClick={() => { navigateToPath(path); }}>
-                {title}
-              </Title>
-              <Summary onClick={() => { navigateToPath(path); }}>
-                {summary}
-              </Summary>
-              {size(tags) ? (
-                <FaTags />
-              ) : null}
-              {flow(
-                uniq,
-                map(tag => (
-                  <Tag key={tag} onClick={() => { navigateToPath(`/tags/${tag}/1`); }}>
-                    <small>
-                      {tag}
-                    </small>
-                  </Tag>
-                ))
-              )(tags)}
-            </SearchedPost>
-          ))(filteredPosts)}
-        </SearchedPosts>
+        <SocialLinkWrapper>
+        <ListMenu>
+          <StyledExternalLink href='https://github.com/mazurbeam' target='_blank'>
+            <StyledGithub/>
+          </StyledExternalLink>
+          <StyledExternalLink href='https://www.linkedin.com/in/walter-mazur-02803453/' target='_blank'>
+            <StyledLinkedin/>
+          </StyledExternalLink>
+        </ListMenu>
+        </SocialLinkWrapper>
       </ul>
     </GnbWrapper>
   );

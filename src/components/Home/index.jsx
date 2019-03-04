@@ -7,6 +7,7 @@ import Helmet from 'react-helmet';
 import Wrapper from '~/components/Common/Wrapper';
 import SimpleWrapper from '~/components/Common/SimpleWrapper';
 import PortfolioCard from '~/components/Common/PortfolioCard';
+import ParticlesWrapper from '~/components/Common/ParticlesWrapper';
 
 const Title = styled.h1`
   @import url("https://fonts.googleapis.com/css?family=Raleway|Zilla+Slab+Highlight");
@@ -50,7 +51,8 @@ const SubTitle = styled.h2`
 
 const Home = ({ portfolios }) => (
   <Fragment>
-    <Wrapper isHome>
+    <Wrapper isHome bg='#0a68a0' color='#161616'>
+      {/*<ParticlesWrapper/>*/}
       <Title>
         Walter Mazur
       </Title>
@@ -59,9 +61,9 @@ const Home = ({ portfolios }) => (
       </SubTitle>
       <Helmet>
         <title>
-          Mazurbeam
+          I'm Mazurbeam!
         </title>
-        <meta name="og:title" content="I'm Wonism!" />
+        <meta name="og:title" content="I'm Mazurbeam!" />
       </Helmet>
     </Wrapper>
     {size(portfolios) >= 4 ? (

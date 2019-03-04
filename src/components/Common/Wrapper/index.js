@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import Box from 'rebass'
+
 
 const WrapperOuter = styled.section`
   position: relative;
@@ -19,14 +21,15 @@ const WrapperInner = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
+  background-color: ${({bg}) => bg};
   ${({ isHome }) => (isHome ? '' : 'padding: 100px 0 0;')}
 `;
 
 const Wrapper = ({
-  children,
+  children, bg, color, ...rest
 }) => (
   <WrapperOuter>
-    <WrapperInner>
+    <WrapperInner bg={bg} color={color} {...rest}>
       {children}
     </WrapperInner>
   </WrapperOuter>
@@ -39,10 +42,14 @@ Wrapper.propTypes = {
     PropTypes.array,
     PropTypes.string,
   ]),
+  bg: PropTypes.string,
+  color: PropTypes.string
 };
 
 Wrapper.defaultProps = {
   children: null,
+  bg: 'transparent',
+  color: '#0a0a0a'
 };
 
 export default Wrapper;
