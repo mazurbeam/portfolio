@@ -1,6 +1,6 @@
 import React, { Children, cloneElement, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { ThemeProvider } from 'styled-components'
+import { ThemeProvider, injectGlobal } from 'styled-components'
 
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
@@ -19,6 +19,14 @@ import ConnectedLayout from '~/containers/HigherOrderLayout';
 import { POST, PORTFOLIO } from '~/constants';
 import './layout.css'
 import theme from '../theme'
+
+// injectGlobal`
+//   html {
+//     @import url('https://fonts.googleapis.com/css?family=Electrolize|Open+Sans|Raleway|Zilla+Slab+Highligh');
+//     background-color: #dceef1;
+//     font-family: 'Electrolize' sans-serif;
+// }
+// `
 
 const GatsbyApp = ({ children, ...otherProps }) => (
   <StaticQuery
@@ -95,7 +103,9 @@ const GatsbyApp = ({ children, ...otherProps }) => (
         <ThemeProvider theme={theme}>
         <Provider store={store}>
           <ConnectedLayout {...otherProps}>
+
             <Fragment>
+
               {childrenWithProps}
             </Fragment>
           </ConnectedLayout>

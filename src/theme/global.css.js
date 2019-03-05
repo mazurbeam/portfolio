@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { injectGlobal } from 'styled-components';
 import {primary, secondary } from './index'
 // export const accent = '#a9009a';
 const accent = '#27c93a';
@@ -6,7 +6,7 @@ const primaryText = '#e9dada';
 
 const primaryBackgrond = primary;
 
-export default createGlobalStyle`
+injectGlobal`
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
   a, abbr, acronym, address, big, cite, code,
@@ -35,6 +35,9 @@ export default createGlobalStyle`
   }
 
   html {
+    //@import url('https://fonts.googleapis.com/css?family=Electrolize|Open+Sans|Raleway|Zilla+Slab+Highligh');
+    //font-family: 'Electrolize' sans-serif;
+
     font-size: 62.5%;
     background-color: #260d08;
   }

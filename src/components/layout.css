@@ -1,3 +1,22 @@
+/*@font-face {*/
+    /*font-family: 'Electrolize';*/
+    /*font-style: normal;*/
+    /*font-weight: 400;*/
+    /*src:*/
+        /*local('Electrolize'),*/
+        /*url(./fonts/Electrolize-Regular.tff) format('truetype');*/
+/*}*/
+
+/*@font-face {*/
+    /*font-family: 'Open Sans';*/
+    /*font-style: normal;*/
+    /*font-weight: normal;*/
+    /*src:*/
+            /*local('OpenSans'),*/
+            /*url(./fonts/OpenSans-Regular.tff) format('truetype');
+}*/
 html {
+    @import url('https://fonts.googleapis.com/css?family=Electrolize|Open+Sans|Raleway|Zilla+Slab+Highligh');
     background-color: #dceef1;
 }
+
