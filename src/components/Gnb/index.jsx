@@ -11,7 +11,8 @@ import {Github} from 'styled-icons/fa-brands/Github'
 import {Linkedin} from 'styled-icons/fa-brands/Linkedin'
 
 import { flow, isEmpty, isEqual, filter, map, uniq, get, size, toLower, replace, startsWith } from 'lodash/fp';
-import { PRIMARY_COLOR, SECONDARY_COLOR } from '~/components/Common/constants';
+import { primary, background } from '~/theme';
+import {primary as PRIMARY_COLOR, secondary as SECONDARY_COLOR} from '~/theme'
 
 const Hamburger = styled.div`
   position: fixed;
@@ -57,7 +58,8 @@ const GnbWrapper = styled.div`
   width: 100%;
   height: 100px;
   line-height: 100px;
-  background-color: rgba(255, 255, 255, .6);
+  //background-color: rgba(255, 255, 255, .6);
+  background-color: ${props => props.theme.colors.bg};
   font-size: 18px;
   font-family: Lato;
   font-weight: 600;
@@ -102,7 +104,7 @@ const ListMenu = styled.li`
   }
 
   a {
-    color: #000;
+    color: ${PRIMARY_COLOR};
   }
 
   ul {
@@ -127,24 +129,24 @@ const Home = styled(FaHome)`
 
 const StyledLink = styled(Link)`
   &.active {
-    color: ${SECONDARY_COLOR};
+    color: ${primary};
     text-decoration: underline;
   }
 
   &:hover {
-    color: ${SECONDARY_COLOR};
+    color: ${primary};
     text-decoration: underline;
   }
 `;
 
 const StyledExternalLink = styled.a`
   &.active {
-    color: ${SECONDARY_COLOR};
+    color: ${primary};
     text-decoration: underline;
   }
 
   &:hover {
-    color: ${SECONDARY_COLOR};
+    color: ${primary};
     text-decoration: underline;
   }
 `;
@@ -397,7 +399,11 @@ const Gnb = ({
     replace(/\/$/, ''),
     isEqual('/resume')
   )(pathname);
-  const isPost = !(isPortfolio || isHome || isResume);
+  const isContact = flow(
+    replace(/\/$/, ''),
+    isEqual('/contact')
+  )(pathname);
+  const isPost = !(isPortfolio || isHome || isResume || isContact);
 
   return (
     <GnbWrapper>
@@ -424,13 +430,11 @@ const Gnb = ({
               </StyledLink>
             </ListMenu>
             <ListMenu>
-              <StyledExternalLink href='https://github.com/mazurbeam' target='_blank'>
-              <StyledGithub/>
-              </StyledExternalLink>
-              <StyledExternalLink href='https://www.linkedin.com/in/walter-mazur-02803453/' target='_blank'>
-                <StyledLinkedin/>
-              </StyledExternalLink>
+              <StyledLink to="/contact" className={isContact ? 'active' : ''}>
+                Contact
+              </StyledLink>
             </ListMenu>
+
 
           </ul>
         </MobileMenus>
@@ -462,16 +466,12 @@ const Gnb = ({
             Resume
           </StyledLink>
         </ListMenu>
-        <SocialLinkWrapper>
         <ListMenu>
-          <StyledExternalLink href='https://github.com/mazurbeam' target='_blank'>
-            <StyledGithub/>
-          </StyledExternalLink>
-          <StyledExternalLink href='https://www.linkedin.com/in/walter-mazur-02803453/' target='_blank'>
-            <StyledLinkedin/>
-          </StyledExternalLink>
+          <StyledLink to="/contact" className={isContact ? 'active' : ''}>
+            Contact
+          </StyledLink>
         </ListMenu>
-        </SocialLinkWrapper>
+
       </ul>
     </GnbWrapper>
   );

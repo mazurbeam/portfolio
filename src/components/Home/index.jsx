@@ -8,7 +8,7 @@ import Wrapper from '~/components/Common/Wrapper';
 import SimpleWrapper from '~/components/Common/SimpleWrapper';
 import PortfolioCard from '~/components/Common/PortfolioCard';
 import ParticlesWrapper from '~/components/Common/ParticlesWrapper';
-
+import {colors} from '~/theme';
 import ContactForm from '~/components/Common/Form/ContactForm';
 
 const Title = styled.h1`
@@ -20,6 +20,7 @@ const Title = styled.h1`
   left: 0;
   margin: auto;
   width: 80%;
+  color: ${colors.primaryColor};
   height: 1.5em;
   line-height: 1.5em;
   font-size: 48px;
@@ -36,6 +37,7 @@ const SubTitle = styled.h2`
   position: absolute;
   top: 4em;
   bottom: 0;
+  color: ${colors.primaryColor};
   right: 0;
   left: 0;
   margin: auto;
@@ -54,7 +56,7 @@ const SubTitle = styled.h2`
 
 const Home = ({ portfolios }) => (
   <Fragment>
-    <Wrapper isHome bg='#0a68a0' color='#161616'>
+    <Wrapper isHome bg={colors.bg} color={colors.primaryColor}>
       {/*<ParticlesWrapper/>*/}
       <Title>
         Walter Mazur

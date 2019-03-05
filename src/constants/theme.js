@@ -1,2 +1,4 @@
-export const bg='#0a680'
-export const color='#161616'
+import {primary, background} from '~/theme'
+
+export const bg=background
+export const color=primary

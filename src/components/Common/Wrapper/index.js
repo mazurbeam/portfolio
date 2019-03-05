@@ -48,7 +48,7 @@ Wrapper.propTypes = {
 
 Wrapper.defaultProps = {
   children: null,
-  bg: 'transparent',
+  bg: '#fff',
   color: '#0a0a0a'
 };
 

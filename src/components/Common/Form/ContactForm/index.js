@@ -31,14 +31,9 @@ const Button = styled.button`
 
 const FormWrapper = styled.div`
   padding: 2rem 4rem;
-  background-color: ${props => props.theme.colors.bg};
-  color: 
-  @media (max-width: ${props => props.theme.breakpoints.tablet}) {
-    padding: 3rem 3rem;
-  }
-  @media (max-width: ${props => props.theme.breakpoints.phone}) {
-    padding: 2rem 1.5rem;
-  }
+  // background-color: ${props => props.theme.colors.bg};
+  color: ${props => props.theme.colors.primaryColor};
+  display: block;
   form {
       font-size: 1.68rem;
 
@@ -52,7 +47,7 @@ const FormWrapper = styled.div`
         margin-top: 0.5rem;
       }
       textarea {
-        resize: vertical;
+        //resize: vertical;
         min-height: 150px;
         width: 100%;
         margin-top: 0.5rem;
@@ -64,7 +59,7 @@ const FormWrapper = styled.div`
   }
   label {
     margin-bottom: .5rem;
-    color: ${props => props.theme.colors.grey.dark};
+    color: ${props => props.theme.colors.primary};
   }
   input, textarea, button {
     font-size: 1rem;
@@ -84,11 +79,8 @@ const FormWrapper = styled.div`
   pre {
     margin-top: 0;
     margin-bottom: 1rem;
-    overflow: auto;
   }
-  figure {
-    margin: 0 0 1rem 0;
-  }
+
   img {
     vertical-align: middle;
   }
@@ -119,20 +111,21 @@ const SubTitle = styled.h2`
   width: 80%;
   height: 1.5em;
   line-height: 1.5em;
-  font-size: 58px;
-  font-size: 5vw;
+  font-size: 2em;
   font-family: 'Raleway' sans-serif;
   text-align: center;
   text-overflow: ellipsis;
-  overflow: hidden;
+  //overflow: hidden;
   white-space: nowrap;
 `;
 
 const ContactForm = () => (
+  <Box>
   <FormWrapper>
     <SubTitle>Contact</SubTitle>
-    <Flex justifyContent='center'>
-    <p>Got an idea or a project you'd like to talk about? Let me know!</p>
+    <Flex flexDirection='column' alignItems='center' justifyContent='center'>
+    <p>Got something you'd like to talk about?</p>
+      <p >Let me know!</p>
     </Flex>
     <form name="contact-form" method="post" data-netlify="true" data-netlify-honeypot="bot-field" action="/success">
       <p>
@@ -157,6 +150,7 @@ const ContactForm = () => (
       <input type="hidden" name="form-name" value="contact-form" />
     </form>
   </FormWrapper>
+  </Box>
 )
 
 export default ContactForm

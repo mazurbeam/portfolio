@@ -1,9 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
+import {primary, secondary } from './index'
 // export const accent = '#a9009a';
 const accent = '#27c93a';
 const primaryText = '#e9dada';
 
-const primaryBackgrond = '#0b321b';
+const primaryBackgrond = primary;
 
 export default createGlobalStyle`
   html, body, div, span, applet, object, iframe,
@@ -35,11 +36,11 @@ export default createGlobalStyle`
 
   html {
     font-size: 62.5%;
-    background-color: #132222;
+    background-color: #260d08;
   }
 
   body {
-    background-color: #132222;
+    background-color: #260d08;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
     line-height: 1;
     font-size: 1.6rem;
