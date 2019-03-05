@@ -66,7 +66,7 @@ const Home = ({ portfolios }) => (
       </SubTitle>
       <Helmet>
         <title>
-          I'm Mazurbeam!
+          Walter Mazur
         </title>
         <meta name="og:title" content="I'm Mazurbeam!" />
       </Helmet>
