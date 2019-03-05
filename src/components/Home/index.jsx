@@ -9,6 +9,8 @@ import SimpleWrapper from '~/components/Common/SimpleWrapper';
 import PortfolioCard from '~/components/Common/PortfolioCard';
 import ParticlesWrapper from '~/components/Common/ParticlesWrapper';
 
+import ContactForm from '~/components/Common/Form/ContactForm';
+
 const Title = styled.h1`
   @import url("https://fonts.googleapis.com/css?family=Raleway|Zilla+Slab+Highlight");
   position: absolute;
@@ -40,14 +42,15 @@ const SubTitle = styled.h2`
   width: 80%;
   height: 1.5em;
   line-height: 1.5em;
-  font-size: 38px;
-  font-size: 8vw;
+  font-size: 58px;
+  font-size: 5vw;
   font-family: 'Raleway' sans-serif;
   text-align: center;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 `;
+
 
 const Home = ({ portfolios }) => (
   <Fragment>
@@ -105,6 +108,9 @@ const Home = ({ portfolios }) => (
         )(portfolios)}
       </SimpleWrapper>
     ) : null}
+    <SimpleWrapper>
+      <ContactForm/>
+    </SimpleWrapper>
   </Fragment>
 );
 

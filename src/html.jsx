@@ -41,7 +41,12 @@ export default class HTML extends Component {
           <style id="gatsby-inlined-css" dangerouslySetInnerHTML={{ __html: stylesStr }} />
         </head>
         <body {...bodyAttributes}>
-          {preBodyComponents}
+        {preBodyComponents}
+        <form name="contact-form" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <textarea name="message"></textarea>
+        </form>
           <div key="body" id="___gatsby" dangerouslySetInnerHTML={{ __html: body }} />
           {postBodyComponents}
         </body>
