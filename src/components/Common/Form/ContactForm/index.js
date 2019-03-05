@@ -5,18 +5,19 @@ import {Text, Flex, Box} from 'rebass';
 const Button = styled.button`
   background: ${props => props.theme.colors.primary};
   border: none;
+  //padding: 1em;
   display: inline-flex;
   align-items: center;
-  border-radius: ${props => (props.big ? '1.5rem' : '1rem')};
-  font-size: ${props => (props.big ? '1.2rem' : '1rem')};
+  border-radius: ${props => (props.big ? '2rem' : '1rem')};
+  font-size: ${props => (props.big ? '1.5rem' : '1rem')};
   color: ${props => props.theme.colors.white};
-  padding: ${props => (props.big ? '0.5rem 1.75rem' : '0.35rem 1.65rem')};
+  padding: ${props => (props.big ? '0.7rem 2rem' : '0.35rem 1.65rem')};
   transition: all ${props => props.theme.transitions.normal};
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
   &:hover {
     background: ${props => props.theme.colors.primaryLight};
     cursor: pointer;
-    transform: translateY(-2px);
+    //transform: translateY(-2px);
   }
   &:focus {
     outline: none;
@@ -120,13 +121,15 @@ const SubTitle = styled.h2`
 `;
 
 const ContactForm = () => (
-  <Box>
+  <Box bg='bg'>
   <FormWrapper>
     <SubTitle>Contact</SubTitle>
     <Flex flexDirection='column' alignItems='center' justifyContent='center'>
     <p>Got something you'd like to talk about?</p>
       <p >Let me know!</p>
     </Flex>
+    <Flex flexDirection='column' a justifyContent='center'>
+
     <form name="contact-form" method="post" data-netlify="true" data-netlify-honeypot="bot-field" action="/success">
       <p>
         <label htmlFor="contact-name">
@@ -144,11 +147,12 @@ const ContactForm = () => (
           Your Message <textarea name="message" id="contact-message" required />
         </label>
       </p>
-      <p>
-        <Button>Send</Button>
-      </p>
+      <Flex justifyContent='center'>
+        <Button big >Send</Button>
+      </Flex>
       <input type="hidden" name="form-name" value="contact-form" />
     </form>
+    </Flex>
   </FormWrapper>
   </Box>
 )

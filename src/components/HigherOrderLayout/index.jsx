@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { size } from 'lodash/fp';
 import Gnb from '~/containers/Gnb';
 import Footer from '~/components/Footer';
+import GlobalStyle from '~/theme/global.css'
 
 const Background = styled.div`
   background-color: #fff;
@@ -86,6 +87,7 @@ export default class HigherOrderLayout extends Component {
           />
         </nav>
         <main>
+          {/*<GlobalStyle/>*/}
           {childrenWithProps}
         </main>
         <footer>

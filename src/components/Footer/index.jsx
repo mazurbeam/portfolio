@@ -5,12 +5,12 @@ import {Linkedin} from 'styled-icons/fa-brands/Linkedin'
 // import { PRIMARY_COLOR, SECONDARY_COLOR } from '~/components/Common/constants';
 import {primary as PRIMARY_COLOR, secondary as SECONDARY_COLOR} from '~/theme'
 const StyledGithub = styled(Github)`
-  height: 35px;
+  height: 25px;
   margin-right: 20px;
 `;
 
 const StyledLinkedin = styled(Linkedin)`
-  height: 35px;
+  height: 25px;
 `;
 
 const ListMenu = styled.li`
@@ -55,7 +55,7 @@ const StyledExternalLink = styled.a`
 
 const FooterWrapper = styled.section`
   padding: 10px 0;
-  height: 60px;
+  height: 45px;
   color: #000;
   background-color: #eee;
   font-size: 11px;

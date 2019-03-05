@@ -1,8 +1,11 @@
 import { lighten } from 'polished'
+
 export const primary = '#260d08'
 export const secondary = '#c2cdcf'
+export const secondaryGrey = '#746d6b'
 const background = '#dceef1'
 const primaryLight = lighten(0.05, primary)
+
 export const colors = {
   primary, // Color for buttons or links
   primaryLight: "#c2cdcf",

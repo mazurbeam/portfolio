@@ -9,10 +9,11 @@ import FaTwitter from 'react-icons/lib/fa/twitter';
 import FaLinkedin from 'react-icons/lib/fa/linkedin';
 import { forEach, startsWith, get } from 'lodash/fp';
 import Clearfix from '~/components/Common/Clearfix';
-import * as profileUrl from '~/resources/me.png';
+import * as profileUrl from '~/resources/me.jpg';
 
 const Wrapper = styled.section`
   padding: 100px 0 0;
+  color: ${props => props.theme.colors.primary};
   @media (max-width: 414px) {
     padding: 70px 16px 0;
   }

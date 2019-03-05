@@ -99,12 +99,24 @@ const ListMenu = styled.li`
   position: relative;
   padding: 0 0 0 2em;
   font-weight: 500;
+  transition: 0.3s;
   @media (max-width: 414px) {
     display: none;
   }
+   &:hover {
+        text-decoration: none;
+    }
 
   a {
     color: ${PRIMARY_COLOR};
+    transition: 0.3s;
+    &:hover {
+        padding: 0.7em;
+        text-decoration: none;
+        background-color: ${PRIMARY_COLOR};
+
+        color: ${SECONDARY_COLOR};
+    }
   }
 
   ul {
@@ -127,14 +139,36 @@ const Home = styled(FaHome)`
   font-size: 40px;
 `;
 
-const StyledLink = styled(Link)`
+const StyledHomeLink = styled(Link)`
+  transition: 0.3s;
   &.active {
-    color: ${primary};
-    text-decoration: underline;
+    color: ${PRIMARY_COLOR};
+    text-decoration: none;
+    padding: 0.7em;
+    background-color: ${SECONDARY_COLOR};
   }
 
   &:hover {
     color: ${primary};
+    border-radius: 25px;
+    text-decoration: underline;
+  }
+`;
+
+const StyledLink = styled(Link)`
+  transition: 0.3s;
+  &.active {
+    color: ${PRIMARY_COLOR};
+    border-radius: 15px;
+    text-decoration: none;
+    padding: 0.7em;
+    background-color: ${SECONDARY_COLOR};
+  }
+
+  &:hover {
+    color: ${primary};
+        border-radius: 15px;
+
     text-decoration: underline;
   }
 `;
@@ -412,9 +446,9 @@ const Gnb = ({
         <MobileMenus>
           <ul>
             <ListMenu>
-              <StyledLink to="/" onClick={closeMenu}>
+              <StyledHomeLink to="/" onClick={closeMenu}>
                 <Home />
-              </StyledLink>
+              </StyledHomeLink>
             </ListMenu>
             
             {hasPortfolio ? (
@@ -449,9 +483,9 @@ const Gnb = ({
       </Hamburger>
       <ul>
         <ListMenu>
-          <StyledLink to="/">
+          <StyledHomeLink to="/">
             <Home />
-          </StyledLink>
+          </StyledHomeLink>
         </ListMenu>
         
         {hasPortfolio ? (
