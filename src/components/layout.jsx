@@ -1,5 +1,7 @@
 import React, { Children, cloneElement, Fragment } from 'react';
 import PropTypes from 'prop-types';
+import { ThemeProvider } from 'styled-components'
+
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { StaticQuery, graphql } from 'gatsby';
@@ -16,6 +18,7 @@ import {
 import ConnectedLayout from '~/containers/HigherOrderLayout';
 import { POST, PORTFOLIO } from '~/constants';
 import './layout.css'
+import theme from '../theme'
 
 const GatsbyApp = ({ children, ...otherProps }) => (
   <StaticQuery
@@ -89,6 +92,7 @@ const GatsbyApp = ({ children, ...otherProps }) => (
       const childrenWithProps = Children.map(children, child => cloneElement(child, otherProps));
 
       return (
+        <ThemeProvider theme={theme}>
         <Provider store={store}>
           <ConnectedLayout {...otherProps}>
             <Fragment>
@@ -96,6 +100,7 @@ const GatsbyApp = ({ children, ...otherProps }) => (
             </Fragment>
           </ConnectedLayout>
         </Provider>
+        </ThemeProvider>
       );
     }}
   />
