@@ -19,4 +19,4 @@ images: [
 - Firebase / Firestore
 
 
-[Go to Web Site →](https://r.commmunity)
+[Go to Web Site →](https://r.community/)
