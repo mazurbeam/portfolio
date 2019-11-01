@@ -52,12 +52,16 @@ const PortfolioCard = styled.section`
   }
 
   h6 {
+    background-color: rgba(0,0,0,.5);;
+    color: white;
+    padding: 5px;
     position: absolute;
     bottom: 16px;
     left: 16px;
     font-size: 14px;
     text-decoration: underline;
   }
+   
 
   h4 {
     position: absolute;

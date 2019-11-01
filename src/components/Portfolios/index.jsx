@@ -11,6 +11,7 @@ const Wrapper = SimpleWrapper.extend`
   @media (max-width: 414px) {
     padding: 70px 0 0;
   }
+ 
 `;
 
 const Portfolios = ({ data }) => {
