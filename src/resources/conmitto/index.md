@@ -4,6 +4,7 @@ title: "Conmitto Manager"
 date: "2019-10-31"
 path: "/portfolio/conmitto/"
 images: [
+  "conmitto/logo.png",  
   "conmitto/asset_list.png",
   "conmitto/asset_details.png"
 ]

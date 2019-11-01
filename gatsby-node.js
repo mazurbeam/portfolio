@@ -16,7 +16,10 @@ exports.onCreateWebpackConfig = ({
   stage,
   plugins,
   actions,
+  getConfig,
+  loaders
 }) => {
+
   actions.setWebpackConfig({
     externals: {
       document: true,
@@ -31,8 +34,47 @@ exports.onCreateWebpackConfig = ({
       plugins.define({
         __DEVELOPMENT__: stage === 'develop' || stage === 'develop-html',
       }),
-    ],
+    ]
   });
+  const config = getConfig()
+
+  config.module.rules = [
+    // Omit the default rule where test === '\.jsx?$'
+    ...config.module.rules.filter(
+      rule => String(rule.test) !== String(/\.jsx?$/)
+    ),
+    // Recreate it with custom exclude filter
+    // Recreate it with custom exclude filter
+    {
+      // Called without any arguments, `loaders.js()` will return an
+      // object like:
+      // {
+      //   options: undefined,
+      //   loader: '/path/to/node_modules/gatsby/dist/utils/babel-loader.js',
+      // }
+      // Unless you're replacing Babel with a different transpiler, you probably
+      // want this so that Gatsby will apply its required Babel
+      // presets/plugins.  This will also merge in your configuration from
+      // `babel.config.js`.
+      ...loaders.js(),
+      test: /\.jsx?$/,
+      // Exclude all node_modules from transpilation, except for 'swiper' and 'dom7'
+      exclude: modulePath =>
+        /node_modules/.test(modulePath) &&
+        !/node_modules\/(swiper|dom7)/.test(modulePath),
+    },
+    {
+      test: /\.(html)$/,
+      use: {
+        loader: 'html-loader',
+        options: {
+          attrs: [':data-src']
+        }
+      }
+    },
+  ]
+  // This will completely replace the webpack config with the modified object.
+  actions.replaceWebpackConfig(config)
 };
 
 exports.createPages = ({ graphql, actions }) => {

@@ -13,7 +13,11 @@ import FaLinkedin from "react-icons/lib/fa/linkedin";
 import { forEach, startsWith, get } from "lodash/fp";
 import Clearfix from "~/components/Common/Clearfix";
 import * as profileUrl from "~/resources/me.jpg";
-import myResume from "~/resources/resume/resume.pdf";
+import myResume from "~/resources/resume/Walter Mazur - Resume.pdf";
+import HtmlPage from "~/resources/resume/resume.html";
+import TemplateComponent from '~/components/Common/TemplateComponent'
+
+var htmlDoc = {__html: HtmlPage};
 
 const Wrapper = styled.section`
   padding: 100px 0 0;
@@ -167,6 +171,9 @@ class Resume extends PureComponent {
             />
 
           </BasicInformation>
+
+          <div dangerouslySetInnerHTML={htmlDoc} />
+          {/*<TemplateComponent template={'~/resources/resume/resume.html'}/>*/}
           {/*<SocialInformation>*/}
           {/*  <a*/}
           {/*    href="https://github.com/mazurbeam"*/}
@@ -183,18 +190,20 @@ class Resume extends PureComponent {
           {/*    <FaLinkedin/>*/}
           {/*  </a>*/}
           {/*</SocialInformation>*/}
-          <Flex flexWrap={"wrap"} justifyContent={"center"}>
-            <Document
-              file={myResume}
-              onLoadSuccess={this.onDocumentLoadSuccess}
-            >
-              <Page
-                pageNumber={pageNumber}
-                // width={400}
-                scale={1.5}
-              />
-            </Document>
-          </Flex>
+          {/*<section dangerouslySetInnerHTML={{ __html: myResumeHtml }} />*/}
+
+          {/*<Flex flexWrap={"wrap"} justifyContent={"center"}>*/}
+          {/*  <Document*/}
+          {/*    file={myResume}*/}
+          {/*    onLoadSuccess={this.onDocumentLoadSuccess}*/}
+          {/*  >*/}
+          {/*    <Page*/}
+          {/*      pageNumber={pageNumber}*/}
+          {/*      // width={400}*/}
+          {/*      scale={1.5}*/}
+          {/*    />*/}
+          {/*  </Document>*/}
+          {/*</Flex>*/}
         </Clearfix>
       </Wrapper>
     );
