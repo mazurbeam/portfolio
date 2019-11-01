@@ -1,6 +1,6 @@
 ---
 type: "portfolio"
-title: "Home Lending Pall"
+title: "Home Lending Pal"
 date: "2019-10-31"
 path: "/portfolio/edupages/"
 images: [
@@ -12,7 +12,7 @@ images: [
 
 # Home Lending Pal
 
-One of the first projects I started contributing to with Stackend Solutions. We built the demo MVP platform that helped them gain the support they needed to build their own team.
+One of the first projects I started contributing to with Stackend Solutions. We built a successful MVP platform that was used to gain the support they needed to build their own team of developers.
 
 ## What I did
 - Was a primary contributor to the MVP platform. 
