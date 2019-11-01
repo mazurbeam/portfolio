@@ -2,20 +2,18 @@ import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import styled from "styled-components";
-import { Document, Page } from "react-pdf";
-
-import FaPinrt from "react-icons/lib/fa/print";
-import FaGithub from "react-icons/lib/fa/github";
+// import { Document, Page } from "react-pdf";
+//
+// import FaPinrt from "react-icons/lib/fa/print";
+// import FaGithub from "react-icons/lib/fa/github";
 import { Flex, Button } from "rebass";
-import FaFacebook from "react-icons/lib/fa/facebook";
-import FaTwitter from "react-icons/lib/fa/twitter";
-import FaLinkedin from "react-icons/lib/fa/linkedin";
-import { forEach, startsWith, get } from "lodash/fp";
+// import FaFacebook from "react-icons/lib/fa/facebook";
+// import FaTwitter from "react-icons/lib/fa/twitter";
+// import FaLinkedin from "react-icons/lib/fa/linkedin";
+// import { forEach, startsWith, get } from "lodash/fp";
 import Clearfix from "~/components/Common/Clearfix";
 import * as profileUrl from "~/resources/me.jpg";
-import myResume from "~/resources/resume/Walter Mazur - Resume.pdf";
 import HtmlPage from "~/resources/resume/resume.html";
-import TemplateComponent from '~/components/Common/TemplateComponent'
 
 var htmlDoc = {__html: HtmlPage};
 
@@ -117,32 +115,9 @@ class Resume extends PureComponent {
     printPage: PropTypes.func.isRequired
 
   };
-  state = {
-    numPages: null,
-    pageNumber: 1
-  };
-
-  componentDidMount() {
-    // const anchors = this.$mdWrapper.getElementsByTagName('a');
-
-    // forEach((anchor) => {
-    //   const href = anchor.getAttribute('href');
-    //   if (startsWith('http')(href)) {
-    //     anchor.setAttribute('target', '_blank');
-    //     anchor.setAttribute('rel', 'noreferrer noopener');
-    //   }
-    // })(anchors);
-  }
-
-  onDocumentLoadSuccess = ({ numPages }) => {
-    this.setState({ numPages });
-  };
 
 
   render() {
-    const { pageNumber, numPages } = this.state;
-    const { data, printPage } = this.props;
-    const resume = get("markdownRemark")(data);
 
     return (
       <Wrapper>
@@ -155,7 +130,7 @@ class Resume extends PureComponent {
           </Helmet>
           <Clearfix>
             <Flex flexWrap={"wrap"} justifyContent={"flex-end"} p={1}>
-              <a href={myResume} target="_blank">
+              <a href='https://mazurbeam.s3-us-west-2.amazonaws.com/Walter_Mazur_resume.pdf' target="_blank">
                 <Button type="button">
                   Download
                 </Button>
@@ -173,37 +148,7 @@ class Resume extends PureComponent {
           </BasicInformation>
 
           <div dangerouslySetInnerHTML={htmlDoc} />
-          {/*<TemplateComponent template={'~/resources/resume/resume.html'}/>*/}
-          {/*<SocialInformation>*/}
-          {/*  <a*/}
-          {/*    href="https://github.com/mazurbeam"*/}
-          {/*    target="_blank"*/}
-          {/*    rel="noreferrer noopener"*/}
-          {/*  >*/}
-          {/*    <FaGithub/>*/}
-          {/*  </a>*/}
-          {/*  <a*/}
-          {/*    href="https://www.linkedin.com/in/walter-mazur-02803453/"*/}
-          {/*    target="_blank"*/}
-          {/*    rel="noreferrer noopener"*/}
-          {/*  >*/}
-          {/*    <FaLinkedin/>*/}
-          {/*  </a>*/}
-          {/*</SocialInformation>*/}
-          {/*<section dangerouslySetInnerHTML={{ __html: myResumeHtml }} />*/}
 
-          {/*<Flex flexWrap={"wrap"} justifyContent={"center"}>*/}
-          {/*  <Document*/}
-          {/*    file={myResume}*/}
-          {/*    onLoadSuccess={this.onDocumentLoadSuccess}*/}
-          {/*  >*/}
-          {/*    <Page*/}
-          {/*      pageNumber={pageNumber}*/}
-          {/*      // width={400}*/}
-          {/*      scale={1.5}*/}
-          {/*    />*/}
-          {/*  </Document>*/}
-          {/*</Flex>*/}
         </Clearfix>
       </Wrapper>
     );
