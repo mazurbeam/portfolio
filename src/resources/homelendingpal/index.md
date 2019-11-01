@@ -2,7 +2,7 @@
 type: "portfolio"
 title: "Home Lending Pall"
 date: "2019-10-31"
-path: "/portfolio/edupages/"
+path: "/portfolio/homelendingpal/"
 images: [
   "homelendingpal/homepage.png",  
   "homelendingpal/CreditScore.png",
