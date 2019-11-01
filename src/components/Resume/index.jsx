@@ -1,15 +1,19 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
-import styled from 'styled-components';
-import FaPinrt from 'react-icons/lib/fa/print';
-import FaGithub from 'react-icons/lib/fa/github';
-import FaFacebook from 'react-icons/lib/fa/facebook';
-import FaTwitter from 'react-icons/lib/fa/twitter';
-import FaLinkedin from 'react-icons/lib/fa/linkedin';
-import { forEach, startsWith, get } from 'lodash/fp';
-import Clearfix from '~/components/Common/Clearfix';
-import * as profileUrl from '~/resources/me.jpg';
+import React, { PureComponent } from "react";
+import PropTypes from "prop-types";
+import Helmet from "react-helmet";
+import styled from "styled-components";
+import { Document, Page } from "react-pdf";
+
+import FaPinrt from "react-icons/lib/fa/print";
+import FaGithub from "react-icons/lib/fa/github";
+import { Flex, Button } from "rebass";
+import FaFacebook from "react-icons/lib/fa/facebook";
+import FaTwitter from "react-icons/lib/fa/twitter";
+import FaLinkedin from "react-icons/lib/fa/linkedin";
+import { forEach, startsWith, get } from "lodash/fp";
+import Clearfix from "~/components/Common/Clearfix";
+import * as profileUrl from "~/resources/me.jpg";
+import myResume from "~/resources/resume/resume.pdf";
 
 const Wrapper = styled.section`
   padding: 100px 0 0;
@@ -20,7 +24,7 @@ const Wrapper = styled.section`
 
   & > ${Clearfix} {
     margin: auto;
-    max-width: 640px;
+    //max-width: 640px;
   }
 
   button {
@@ -106,24 +110,35 @@ const MDInformation = styled.section`
 class Resume extends PureComponent {
   static propTypes = {
     data: PropTypes.shape({ date: PropTypes.object }).isRequired,
-    printPage: PropTypes.func.isRequired,
+    printPage: PropTypes.func.isRequired
+
+  };
+  state = {
+    numPages: null,
+    pageNumber: 1
   };
 
   componentDidMount() {
-    const anchors = this.$mdWrapper.getElementsByTagName('a');
+    // const anchors = this.$mdWrapper.getElementsByTagName('a');
 
-    forEach((anchor) => {
-      const href = anchor.getAttribute('href');
-      if (startsWith('http')(href)) {
-        anchor.setAttribute('target', '_blank');
-        anchor.setAttribute('rel', 'noreferrer noopener');
-      }
-    })(anchors);
+    // forEach((anchor) => {
+    //   const href = anchor.getAttribute('href');
+    //   if (startsWith('http')(href)) {
+    //     anchor.setAttribute('target', '_blank');
+    //     anchor.setAttribute('rel', 'noreferrer noopener');
+    //   }
+    // })(anchors);
   }
 
+  onDocumentLoadSuccess = ({ numPages }) => {
+    this.setState({ numPages });
+  };
+
+
   render() {
+    const { pageNumber, numPages } = this.state;
     const { data, printPage } = this.props;
-    const resume = get('markdownRemark')(data);
+    const resume = get("markdownRemark")(data);
 
     return (
       <Wrapper>
@@ -132,13 +147,16 @@ class Resume extends PureComponent {
             <title>
               MAZURBEAM | RESUME
             </title>
-            <meta name="og:title" content="MAZURBEAM | RESUME" />
+            <meta name="og:title" content="MAZURBEAM | RESUME"/>
           </Helmet>
           <Clearfix>
-            <button type="button" onClick={printPage}>
-              <FaPinrt />
-              Print
-            </button>
+            <Flex flexWrap={"wrap"} justifyContent={"flex-end"} p={1}>
+              <a href={myResume} target="_blank">
+                <Button type="button">
+                  Download
+                </Button>
+              </a>
+            </Flex>
           </Clearfix>
           <BasicInformation>
             <img
@@ -147,35 +165,36 @@ class Resume extends PureComponent {
               width="120"
               height="120"
             />
-            <h1>
-              Walter Mazur
-            </h1>
-            <p>
-              mazurbeam@gmail.com
-            </p>
+
           </BasicInformation>
-          <SocialInformation>
-            <a
-              href="https://github.com/mazurbeam"
-              target="_blank"
-              rel="noreferrer noopener"
+          {/*<SocialInformation>*/}
+          {/*  <a*/}
+          {/*    href="https://github.com/mazurbeam"*/}
+          {/*    target="_blank"*/}
+          {/*    rel="noreferrer noopener"*/}
+          {/*  >*/}
+          {/*    <FaGithub/>*/}
+          {/*  </a>*/}
+          {/*  <a*/}
+          {/*    href="https://www.linkedin.com/in/walter-mazur-02803453/"*/}
+          {/*    target="_blank"*/}
+          {/*    rel="noreferrer noopener"*/}
+          {/*  >*/}
+          {/*    <FaLinkedin/>*/}
+          {/*  </a>*/}
+          {/*</SocialInformation>*/}
+          <Flex flexWrap={"wrap"} justifyContent={"center"}>
+            <Document
+              file={myResume}
+              onLoadSuccess={this.onDocumentLoadSuccess}
             >
-              <FaGithub />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/walter-mazur-02803453/"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              <FaLinkedin />
-            </a>
-          </SocialInformation>
-          <MDInformation>
-            <div
-              ref={(mdWrapper) => { this.$mdWrapper = mdWrapper; }}
-              dangerouslySetInnerHTML={{ __html: get('html')(resume) }}
-            />
-          </MDInformation>
+              <Page
+                pageNumber={pageNumber}
+                // width={400}
+                scale={1.5}
+              />
+            </Document>
+          </Flex>
         </Clearfix>
       </Wrapper>
     );

@@ -35,12 +35,13 @@ injectGlobal`
   }
 
   html {
-    //@import url('https://fonts.googleapis.com/css?family=Electrolize|Open+Sans|Raleway|Zilla+Slab+Highligh');
-    //font-family: 'Electrolize' sans-serif;
+    @import url('https://fonts.googleapis.com/css?family=Electrolize|Open+Sans|Raleway|Zilla+Slab+Highligh');
+    font-family: 'Electrolize' sans-serif;
 
     font-size: 62.5%;
     background-color: #260d08;
   }
+
 
   body {
     background-color: #260d08;
@@ -101,3 +102,4 @@ injectGlobal`
     margin-bottom: 2rem;
   }
 `;
+

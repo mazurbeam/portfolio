@@ -25,7 +25,7 @@ const Title = styled.h1`
   line-height: 1.5em;
   font-size: 48px;
   font-size: 10vw;
-  font-family: 'Zilla Slab Highlight', cursive;
+  //font-family: 'Zilla Slab Highlight', cursive;
   text-align: center;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -33,7 +33,7 @@ const Title = styled.h1`
 `;
 
 const SubTitle = styled.h2`
-  @import url("https://fonts.googleapis.com/css?family=Ralewayt");
+  //@import url("https://fonts.googleapis.com/css?family=Ralewayt");
   position: absolute;
   top: 4em;
   bottom: 0;
