@@ -1,5 +1,4 @@
 import { lighten } from 'polished'
-export {default as GlobalStyle} from './global.css'
 export const primary = '#260d08'
 export const secondary = '#c2cdcf'
 export const secondaryGrey = '#746d6b'

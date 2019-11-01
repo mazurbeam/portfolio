@@ -18,13 +18,13 @@ import {
 import ConnectedLayout from "~/containers/HigherOrderLayout";
 import { POST, PORTFOLIO } from "~/constants";
 import "./layout.css";
-import theme, { GlobalStyle } from "../theme";
-
+import theme from "../theme";
+// import "../theme/global.css"
 // injectGlobal`
 //   html {
 //     @import url('https://fonts.googleapis.com/css?family=Electrolize|Open+Sans|Raleway|Zilla+Slab+Highligh');
 //     background-color: #dceef1;
-//     font-family: 'Electrolize' sans-serif;
+//     font-family: 'Zill ' sans-serif;
 // }
 // `
 
@@ -100,7 +100,6 @@ const GatsbyApp = ({ children, ...otherProps }) => (
       const childrenWithProps = Children.map(children, child => cloneElement(child, otherProps));
 
       return (
-        <GlobalStyle>
 
           <ThemeProvider theme={theme}>
             <Provider store={store}>
@@ -114,7 +113,6 @@ const GatsbyApp = ({ children, ...otherProps }) => (
               </ConnectedLayout>
             </Provider>
           </ThemeProvider>
-        </GlobalStyle>
       );
     }}
   />

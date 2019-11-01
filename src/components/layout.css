@@ -18,7 +18,7 @@
 
 
 html {
-    /*@import url('https://fonts.googleapis.com/css?family=Electrolize|Open+Sans|Raleway|Zilla+Slab+Highligh');*/
+    @import url('https://fonts.googleapis.com/css?family=Electrolize|Open+Sans|Raleway|Zilla+Slab+Highligh');
     background-color: #dceef1;
 }
 
