@@ -4,14 +4,14 @@ title: "Vitrix Health"
 date: "2019"
 path: "/portfolio/vitrix/"
 images: [
-    "vitrix/homepage.png"
+    "vitrix/about.png"
 ]
 ---
 
 # Vitrix Health.
 
 ## What I did
-- For a device they have that takes oral pictures, I built the entire backend that is used by a mobile app they built and added functionality to a React dashboard UI to view images uploaded from the app.
+- I built the backend and added functionality to a React dashboard that manages pictures sent from an oral imaging device.
 
 ## Libraries / Tools
 - React.js 
