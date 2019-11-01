@@ -4,6 +4,7 @@ title: "Home Lending Pall"
 date: "2019-10-31"
 path: "/portfolio/edupages/"
 images: [
+  "homelendingpal/homepage.png",  
   "homelendingpal/CreditScore.png",
   "homelendingpal/ImprovementPlan.png"
 ]
