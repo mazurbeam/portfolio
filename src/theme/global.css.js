@@ -1,4 +1,4 @@
-import { injectGlobal } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 import {primary, secondary } from './index'
 // export const accent = '#a9009a';
 const accent = '#27c93a';
@@ -6,7 +6,7 @@ const primaryText = '#e9dada';
 
 const primaryBackgrond = primary;
 
-injectGlobal`
+const GlobalStyle = createGlobalStyle`
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
   a, abbr, acronym, address, big, cite, code,
@@ -35,11 +35,26 @@ injectGlobal`
   }
 
   html {
-    //@import url('https://fonts.googleapis.com/css?family=Electrolize|Open+Sans|Raleway|Zilla+Slab+Highligh');
-    //font-family: 'Electrolize' sans-serif;
+    @import url('https://fonts.googleapis.com/css?family=Electrolize|Open+Sans|Raleway|Zilla+Slab+Highligh');
+    font-family: 'Electrolize' sans-serif;
 
     font-size: 62.5%;
     background-color: #260d08;
+  }
+  
+  @font-face {
+    font-family: 'Electrolize';
+    src: local('Electrolize'), url(./fonts/Electrolize-Regular.ttf) format('ttf');
+  }
+  
+  @font-face {
+    font-family: 'Open Sans';
+    src: local('Open Sans'), url(./fonts/OpenSans-Regular.ttf) format('ttf');
+  }
+  
+  @font-face {
+    font-family: 'Zilla Slab Highlight', cursive;
+    src: local('Zilla Slab Highlight'), url(./fonts/ZillaSlabHighlight-Bold.ttf) format('ttf');
   }
 
   body {
@@ -101,3 +116,5 @@ injectGlobal`
     margin-bottom: 2rem;
   }
 `;
+
+export default GlobalStyle

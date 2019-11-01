@@ -12,7 +12,7 @@ import {colors} from '~/theme';
 import ContactForm from '~/components/Common/Form/ContactForm';
 
 const Title = styled.h1`
-  @import url("https://fonts.googleapis.com/css?family=Raleway|Zilla+Slab+Highlight");
+  //@import url("https://fonts.googleapis.com/css?family=Raleway|Zilla+Slab+Highlight");
   position: absolute;
   top: 0;
   bottom: 0;
@@ -33,7 +33,7 @@ const Title = styled.h1`
 `;
 
 const SubTitle = styled.h2`
-  @import url("https://fonts.googleapis.com/css?family=Ralewayt");
+  //@import url("https://fonts.googleapis.com/css?family=Ralewayt");
   position: absolute;
   top: 4em;
   bottom: 0;

@@ -24,6 +24,7 @@ const PortfolioDescription = styled.section`
   float: left;
   padding: 0 0 0 36px;
   width: 50%;
+  color: black;
   @media (max-width: 414px) {
     margin: 0 0 16px;
     padding: 0 0 16px;
