@@ -11,7 +11,8 @@ images: [
 # Vitrix Health.
 
 ## What I did
-- I built the backend and added functionality to a React dashboard that manages pictures sent from an oral imaging device.
+- I built a Django API and added functionality to a React dashboard that manages pictures sent from an oral imaging device.
+- Setup the secure production server on AWS with a managed database and S3 bucket.
 
 ## Libraries / Tools
 - React.js 
