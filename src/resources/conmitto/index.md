@@ -5,8 +5,8 @@ date: "2019-10-31"
 path: "/portfolio/conmitto/"
 images: [
   "conmitto/logo.png",  
-  "conmitto/asset_list.png",
-  "conmitto/asset_details.png"
+  "conmitto/schedules.png",
+  "conmitto/asset_list.png"
 ]
 ---
 
@@ -15,16 +15,19 @@ images: [
 One of the first projects I started contributing to with Stackend Solutions.
 
 ## What I did
-- Assisted with migrating the Flask API to Django at a critical point in the app's development. 
+- Assisted with much of the backend design and implementation 
+- Setup most of the frontend structure and tooling 
 - Created the redux store
+- Built a scheduled shift system for personnel from start to finish
 
 ## Libraries / Tools
 - Python / Django
-- Postgres
+- Postgres / Postgis
 - React / Redux
+- Cypress End-to-End testing
 - SASS
 - Styled Components
 - Docker 
 
 
-[Go to Web Site →](https://conmittomanager.com)
+[Go to Web Site →](https://conmitto.io)
