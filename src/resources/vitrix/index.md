@@ -18,6 +18,7 @@ images: [
 - React.js 
 - Redux
 - Django
+- Postgres
 - AWS
 
 
