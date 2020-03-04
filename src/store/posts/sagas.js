@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import { Tweet } from 'react-twitter-widgets';
 import { all, call, put } from 'redux-saga/effects';
 import Clipboard from 'clipboard';

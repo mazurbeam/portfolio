@@ -22,7 +22,7 @@ path: "/resume/"
 ## Projects
 - Django React Docker (https://github.com/mazurbeam/django-react-docker)
   - Template used for projects I start
-  - Frontend starter generated with Razzle for server side rendering and extended with Redux, styled-components, and React Router.
+  - Frontend starter generated with Razzle for server side rendering and extended with Redux, @emotion/styled, and React Router.
   - Uses Django, React/Razzle, Postgres, and Traefik
 
 ## Skills

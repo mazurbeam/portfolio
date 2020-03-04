@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import {Github} from 'styled-icons/fa-brands/Github'
 import {Linkedin} from 'styled-icons/fa-brands/Linkedin'
 // import { PRIMARY_COLOR, SECONDARY_COLOR } from '~/components/Common/constants';

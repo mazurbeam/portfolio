@@ -5,6 +5,7 @@ module.exports = {
   },
   pathPrefix: '/',
   plugins: [
+    `gatsby-plugin-emotion`,
     {
       resolve: 'gatsby-source-filesystem',
       options: {

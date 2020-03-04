@@ -1,4 +1,4 @@
-import { injectGlobal } from 'styled-components';
+import { injectGlobal } from '@emotion/styled';
 import {primary, secondary } from './index'
 // export const accent = '#a9009a';
 const accent = '#27c93a';

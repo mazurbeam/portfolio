@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 // import { Document, Page } from "react-pdf";
 //
 // import FaPinrt from "react-icons/lib/fa/print";

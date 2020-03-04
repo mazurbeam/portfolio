@@ -1,28 +1,28 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import Helmet from 'react-helmet';
-import SimpleWrapper from '~/components/Common/SimpleWrapper';
+// import SimpleWrapper from '~/components/Common/SimpleWrapper';
 
-const Wrapper = SimpleWrapper.extend`
-  padding: 100px 0 0;
-  min-height: 100vh;
-  text-align: center;
-  @media (max-width: 414px) {
-    padding: 70px 0 0;
-  }
-
-  h1 {
-    margin: 0 0 .67em;
-    font-size: 24px;
-  }
-
-  a {
-    text-decoration: underline;
-  }
-`;
+// const Wrapper = SimpleWrapper.extend`
+//   padding: 100px 0 0;
+//   min-height: 100vh;
+//   text-align: center;
+//   @media (max-width: 414px) {
+//     padding: 70px 0 0;
+//   }
+//
+//   h1 {
+//     margin: 0 0 .67em;
+//     font-size: 24px;
+//   }
+//
+//   a {
+//     text-decoration: underline;
+//   }
+// `;
 
 const NotFoundPage = () => (
-  <Wrapper>
+  <div>
     <Helmet>
       <title>
         MAZURBEAM | PAGE NOT FOUND
@@ -35,7 +35,7 @@ const NotFoundPage = () => (
     <Link to="/">
       ← Go Home
     </Link>
-  </Wrapper>
+  </div>
 );
 
 export default NotFoundPage;

@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import FaAngleLeft from 'react-icons/lib/fa/angle-left';
-
+import { Menu } from 'antd';
 const BackButtonIcon = styled(FaAngleLeft)`
   display: none;
 `;
@@ -15,12 +15,12 @@ const StyledLink = styled(Link)`
 `;
 
 const Header = ({ historyGoBack }) => (
-  <HeaderWrapper>
+  <Menu>
     <BackButtonIcon onClick={historyGoBack} />
     <StyledLink to="/">
       Home
     </StyledLink>
-  </HeaderWrapper>
+  </Menu>
 );
 
 Header.propTypes = {

@@ -1,8 +1,8 @@
 import React, {Fragment} from 'react'
 import Helmet from 'react-helmet'
 import { Link } from 'gatsby';
-
-import styled, {ThemeProvider} from 'styled-components'
+import  {ThemeProvider} from 'emotion-theming'
+import styled from '@emotion/styled'
 import {Box, Flex, Heading, Text, Button} from 'rebass';
 import SimpleWrapper from '~/components/Common/SimpleWrapper';
 import theme from '~/theme'

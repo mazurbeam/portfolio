@@ -1,24 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import { map, includes, get, toUpper } from 'lodash/fp';
 import SimpleWrapper from '~/components/Common/SimpleWrapper';
 import { PRIMARY_COLOR } from '~/components/Common/constants';
 
-const Wrapper = SimpleWrapper.extend`
-  padding: 100px 0 0;
-  @media (max-width: 414px) {
-    padding: 70px 16px 0;
-  }
-
-  &:before,
-  &:after {
-    display: block;
-    content: '';
-    clear: both;
-  }
-`;
+// const Wrapper = SimpleWrapper.extend`
+//   padding: 100px 0 0;
+//   @media (max-width: 414px) {
+//     padding: 70px 16px 0;
+//   }
+//
+//   &:before,
+//   &:after {
+//     display: block;
+//     content: '';
+//     clear: both;
+//   }
+// `;
 
 const PortfolioDescription = styled.section`
   float: left;
@@ -96,7 +96,7 @@ const Portfolio = ({ data }) => {
   const { title, images } = frontmatter;
 
   return (
-    <Wrapper>
+    <div>
       <Helmet>
         <title>
           {`MAZURBEAM | ${toUpper(title)}`}
@@ -129,7 +129,7 @@ const Portfolio = ({ data }) => {
           );
         })(images)}
       </PortfolioImages>
-    </Wrapper>
+    </div>
   );
 };
 

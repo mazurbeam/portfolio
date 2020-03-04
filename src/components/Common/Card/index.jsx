@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import Truncate from 'react-truncate';
 import FaTags from 'react-icons/lib/fa/tags';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import { isNil, includes, map, first } from 'lodash/fp';
 
 const ImageWrapper = styled.figure`

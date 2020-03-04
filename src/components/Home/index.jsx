@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import { flow, slice, map, includes, get, size, isEmpty, isArray, first } from 'lodash/fp';
 import Helmet from 'react-helmet';
 import Wrapper from '~/components/Common/Wrapper';
@@ -9,28 +9,13 @@ import SimpleWrapper from '~/components/Common/SimpleWrapper';
 import PortfolioCard from '~/components/Common/PortfolioCard';
 import ParticlesWrapper from '~/components/Common/ParticlesWrapper';
 import {colors} from '~/theme';
+
 import ContactForm from '~/components/Common/Form/ContactForm';
 
-const Title = styled.h1`
-  @import url("https://fonts.googleapis.com/css?family=Raleway|Zilla+Slab+Highlight");
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  margin: auto;
-  width: 80%;
-  color: ${colors.primaryColor};
-  height: 1.5em;
-  line-height: 1.5em;
-  font-size: 48px;
-  font-size: 10vw;
-  //font-family: 'Zilla Slab Highlight', cursive;
-  text-align: center;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-`;
+import { Typography } from 'antd';
+
+const { Title } = Typography;
+
 
 const SubTitle = styled.h2`
   //@import url("https://fonts.googleapis.com/css?family=Ralewayt");

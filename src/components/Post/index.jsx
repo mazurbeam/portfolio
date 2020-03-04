@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import Helmet from 'react-helmet';
 import FaTags from 'react-icons/lib/fa/tags';
 import { flow, isEmpty, isNil, map, includes, add, get, first, defaultTo } from 'lodash/fp';

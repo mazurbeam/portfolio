@@ -1,6 +1,6 @@
 import React, { Children, cloneElement, Fragment } from "react";
 import PropTypes from "prop-types";
-import { ThemeProvider, injectGlobal } from "styled-components";
+import { ThemeProvider } from "emotion-theming";
 
 import { createStore } from "redux";
 import { Provider } from "react-redux";
@@ -18,6 +18,8 @@ import {
 import ConnectedLayout from "~/containers/HigherOrderLayout";
 import { POST, PORTFOLIO } from "~/constants";
 import "./layout.css";
+import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
+
 import theme from "../theme";
 // import "../theme/global.css"
 // injectGlobal`

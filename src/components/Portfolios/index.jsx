@@ -3,22 +3,14 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { Link } from 'gatsby';
 import { isEmpty, isArray, includes, map, get, first } from 'lodash/fp';
-import SimpleWrapper from '~/components/Common/SimpleWrapper';
+// import SimpleWrapper from '~/components/Common/SimpleWrapper';
 import PortfolioCard from '~/components/Common/PortfolioCard';
-
-const Wrapper = SimpleWrapper.extend`
-  padding: 100px 0 0;
-  @media (max-width: 414px) {
-    padding: 70px 0 0;
-  }
- 
-`;
 
 const Portfolios = ({ data }) => {
   const portfolios = get('allMarkdownRemark.edges')(data);
 
   return (
-    <Wrapper bg='#0a68a0' color='#161616'>
+    <div >
       <Helmet>
         <title>
           MAZURBEAM | PORTFOLIO
@@ -61,7 +53,7 @@ const Portfolios = ({ data }) => {
 
         return null;
       })(portfolios)}
-    </Wrapper>
+    </div>
   );
 };
 

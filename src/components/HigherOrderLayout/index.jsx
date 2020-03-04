@@ -1,11 +1,14 @@
 import React, { Children, cloneElement, Component } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import { size } from 'lodash/fp';
 import Gnb from '~/containers/Gnb';
-import Footer from '~/components/Footer';
-import GlobalStyle from '~/theme/global.css'
+import FooterComponent from '~/components/Footer';
 
+import {Layout} from "antd";
+
+const { Header, Sider, Content, Footer } = Layout;
+// import GlobalStyle from '~/theme/global.css'
 const Background = styled.div`
   background-color: #fff;
 
@@ -77,23 +80,24 @@ export default class HigherOrderLayout extends Component {
       }));
 
     return (
-      <Background>
-        <nav>
+      <Layout className={'layout'}>
+        <Header>
+          <div className={'logo'}/>
           <Gnb
             location={location}
             categories={categories}
             postInformations={postInformations}
             hasPortfolio={size(portfolios) > 0}
           />
-        </nav>
-        <main>
+        </Header>
+        <Content>
           {/*<GlobalStyle/>*/}
           {childrenWithProps}
-        </main>
-        <footer>
-          <Footer />
-        </footer>
-      </Background>
+        </Content>
+        <Footer>
+          <FooterComponent />
+        </Footer>
+      </Layout>
     );
   }
 }
